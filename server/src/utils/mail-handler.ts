@@ -21,8 +21,6 @@ export const sendUserVerificationLink = async (baseURL : string, email: string) 
         from: EMAIL_USER,
         html:`
             <h1>Hello world</h1>
-            `,
-            
-
-    });
+            `, 
+    });  
 };
