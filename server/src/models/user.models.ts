@@ -1,18 +1,17 @@
-import {Schema, model, Model, models, } from "mongoose"
+import {Schema, model, Model, models } from "mongoose"
 
 enum UserRoleEnum {
     ADMIN  = "Admin",
     USER = "User",
 }
 
-enum UserRoleEnumNum
 
 type UserSchemaType = {
     email: string;
     password: string;
     phoneNumber: string;
-    adress: string;
-    role: UserRoleEnumNum;
+    address: string;
+    role: UserRoleEnum;
     orderedFoods: Schema.Types.ObjectId;
     ttl: Date;
     isVerified: boolean;

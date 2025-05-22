@@ -1,7 +1,7 @@
-import { ConfigDotenv } from "dotenv";
+import { configDotenv } from "dotenv";
 import { createTransport } from "nodemailer";
 
-ConfigDotenv();
+configDotenv();
 
 const { EMAIL_PASS, EMAIL_USER } = process.env;
 
