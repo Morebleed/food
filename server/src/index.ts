@@ -5,6 +5,7 @@ import { connectDatabase } from "./database";
 
 const app = express();
 
+configDotenv();
 connectDatabase();
 
 const port = 8000;

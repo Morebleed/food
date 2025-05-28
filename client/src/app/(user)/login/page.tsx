@@ -11,20 +11,26 @@ const LoginPage = () => {
         setSelectedFile(file);
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         const form = new FormData();
 
-        if ()
+        if (!selectedFile) return;
 
         form.append("upload_preset", "Food-Delivery");
-        form.append("upload, selectedFile")
+        form.append("file", selectedFile);
+        form.append("folder", "food")
+
+        const response = await fetch("https://api.cloudinary.com/v1_1/demo/image/upload", { method: "POST", body: form });
+
+        const parsed = await response.json();
+        console.log(parsed.url);
     };
 
     return (
-        <form>
+        <div>
             <input type="file" onChange={handleFileChange} />
             <button onClick={handleSubmit}>Submit</button>
-        </form>
+        </div>
     );
 };
 
